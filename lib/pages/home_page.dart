@@ -43,17 +43,38 @@ class _HomepageState extends State<Homepage> {
       ),
       body: Padding(
           padding: const EdgeInsets.all(22.0),
-          child: (CatalogModel.items.isNotEmpty)          //CatalogModel.items != null
-              ? ListView.builder(
-                  itemCount: CatalogModel.items.length,
+          child: (CatalogModel.items.isNotEmpty) //CatalogModel.items != null
+              ? GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 16,
+                      crossAxisSpacing: 16),
                   itemBuilder: (context, index) {
-                    return ItemWidget(item: CatalogModel.items[index]);
+                    final item = CatalogModel.items[index];
+                    return Card(
+                      clipBehavior: Clip.antiAlias,
+                        shape: RoundedRectangleBorder(                   
+                            borderRadius: BorderRadius.circular(10)),
+                        child: GridTile(
+                            header: Container(
+                              child: Text(item.name, style: TextStyle(color: Colors.white),),
+                              padding: const EdgeInsets.all(12),
+                              decoration:
+                                  BoxDecoration(color: Colors.blueGrey[500]),
+                            ),
+                            footer: Container(
+                              child: Text(item.price.toString(), style: TextStyle(color: Colors.white),),
+                              padding: const EdgeInsets.all(12),
+                              decoration:
+                                  BoxDecoration(color: Colors.black),
+                            ),
+                            child: Image.network(item.image)));
                   },
+                  itemCount: CatalogModel.items.length,
                 )
               : Center(
                   child: CircularProgressIndicator(),
-                )
-                ),
+                )),
       drawer: MyDrawer(),
     );
   }
