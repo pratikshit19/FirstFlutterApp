@@ -11,14 +11,14 @@ class MyDrawer extends StatelessWidget {
     // const image = "pkk.png";
     return Drawer(
       child: Container(
-        color: Colors.indigo,
+        color: Colors.blueGrey[500],
         child: ListView(
-          children: const [
+          children: [
             DrawerHeader(
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                decoration: BoxDecoration(color: Colors.indigo),
+                decoration: BoxDecoration(color: Colors.blueGrey[500]),
                 accountName: Text("Pratikshit Kumar",
                     style: TextStyle(color: Colors.white)),
                 accountEmail: Text("pratikshit@icloud.com",

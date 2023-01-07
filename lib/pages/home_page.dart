@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: prefer_const_constructors
 
+import 'package:flutter/material.dart';
+import 'package:flutter/src/material/colors.dart';
 import '../widgets/drawer.dart';
 
 class Homepage extends StatelessWidget {
@@ -9,7 +11,9 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Catalog App")),
+      appBar: AppBar(
+        title: Text("Catalog App"),
+      ),
       body: Center(
         child: Container(
             child: Text("welcomeee to $days days of flutter by $name")),
