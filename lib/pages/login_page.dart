@@ -15,18 +15,19 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
 
   moveToHome(BuildContext context) async {
-    if(_formKey.currentState!.validate()){
-    setState(() {
-      changeButton = true;
-    });
+    if (_formKey.currentState!.validate()) {
+      setState(() {
+        changeButton = true;
+      });
 
-    await Future.delayed(Duration(seconds: 1));
-    await Navigator.pushNamed(context, MyRoutes.homeRoute);
-    setState(() {
-      changeButton = false;
-    });
-   }
+      await Future.delayed(Duration(seconds: 1));
+      await Navigator.pushNamed(context, MyRoutes.homeRoute);
+      setState(() {
+        changeButton = false;
+      });
+    }
   }
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -37,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 Image.asset(
-                  "assets/images/login_img.png",
+                  "assets/images/pkk.png",
                   fit: BoxFit.cover,
                   width: 250,
                   height: 300,
@@ -65,39 +66,36 @@ class _LoginPageState extends State<LoginPage> {
                           hintText: "Enter Username",
                           labelText: "Username",
                         ),
-                        validator: (value){
-                          if(value!.isEmpty){
+                        validator: (value) {
+                          if (value!.isEmpty) {
                             return "Username cannot be empty";
                           }
                           return null;
                         },
-                        
                         onChanged: (value) {
                           name = value;
                           setState(() {});
                         },
                       ),
                       TextFormField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          hintText: "Enter Password",
-                          labelText: "Password",
-                        ),
-                        validator: (value){
-                          if(value!.isEmpty){
-                            return "Password cannot be empty";
-                          }
-                          else if(value.length < 6){
-                            return "Password length should be atleast 6";
-                          }
-                          return null;
-                        }
-                      ),
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            hintText: "Enter Password",
+                            labelText: "Password",
+                          ),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Password cannot be empty";
+                            } else if (value.length < 6) {
+                              return "Password length should be atleast 6";
+                            }
+                            return null;
+                          }),
                       SizedBox(
                         height: 50,
                       ),
                       Material(
-                        color: Colors.teal,
+                        color: Colors.indigo,
                         borderRadius:
                             BorderRadius.circular(changeButton ? 50 : 8),
                         child: InkWell(
@@ -110,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                             child: changeButton
                                 ? Icon(
                                     Icons.done,
-                                    color: Colors.white,
+                                    color: Colors.indigo,
                                   )
                                 : Text(
                                     "Login",
