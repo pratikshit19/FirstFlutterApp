@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 Image.asset(
-                  "assets/images/pkk.png",
+                  "assets/images/login_img.png",
                   fit: BoxFit.cover,
                   width: 250,
                   height: 300,
@@ -108,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                             child: changeButton
                                 ? Icon(
                                     Icons.done,
-                                    color: Colors.indigo,
+                                    color: Colors.blueGrey[500],
                                   )
                                 : Text(
                                     "Login",
