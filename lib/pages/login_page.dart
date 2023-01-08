@@ -95,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: 50,
                       ),
                       Material(
-                        color: Colors.indigo,
+                        color: Colors.blueGrey[600],
                         borderRadius:
                             BorderRadius.circular(changeButton ? 50 : 8),
                         child: InkWell(
@@ -108,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                             child: changeButton
                                 ? Icon(
                                     Icons.done,
-                                    color: Colors.blueGrey[500],
+                                    color: Colors.blueGrey[600],
                                   )
                                 : Text(
                                     "Login",
