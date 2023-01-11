@@ -26,12 +26,14 @@ class DetailsPages extends StatelessWidget {
                     MaterialStateProperty.all(MyTheme.darkBluishColor),
                 shape: MaterialStateProperty.all(StadiumBorder()),
               ),
-              child: "Buy".text.make(),
-            ).wh(80, 50)
+              child: "Add to cart".text.make(),
+            ).wh(110, 50)
           ],
         ).p32(),
       ),
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheme.creamColor,
       body: SafeArea(
         child: Column(
@@ -55,6 +57,11 @@ class DetailsPages extends StatelessWidget {
                         .make(),
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),
                     10.heightBox,
+                    "Voluptua sadipscing sadipscing sit no voluptua no dolores aliquyam, sed diam magna dolor sanctus lorem dolore, dolore dolore kasd lorem dolores amet accusam sit, et at ipsum magna ipsum, dolor ut rebum sadipscing dolore et amet rebum. Justo duo est magna no. Et sanctus amet et stet, vero diam justo."
+                        .text
+                        .textStyle(context.captionStyle)
+                        .make()
+                        .p24()
                   ],
                 ).py64(),
               ),
