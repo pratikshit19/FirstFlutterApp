@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unnecessary_null_comparison
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -43,8 +43,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
         backgroundColor: MyTheme.creamColor,
         floatingActionButton: FloatingActionButton(
-          onPressed: () =>  Navigator.pushNamed(context, MyRoutes.cartRoute),
-          
+          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
           child: Icon(CupertinoIcons.cart),
           backgroundColor: MyTheme.darkBluishColor,
         ),

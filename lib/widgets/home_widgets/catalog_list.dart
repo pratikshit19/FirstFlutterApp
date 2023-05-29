@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/details_page.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -14,13 +16,12 @@ class CatalogList extends StatelessWidget {
       itemBuilder: (context, index) {
         final catalog = CatalogModel.items[index];
         return InkWell(
-          onTap: () => Navigator.push(context, 
-           MaterialPageRoute(
-            builder: (context) => DetailsPages(catalog: catalog),
-            )
-            ),
-          child: CatalogItem(catalog: catalog)
-          );
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsPages(catalog: catalog),
+                )),
+            child: CatalogItem(catalog: catalog));
       },
     );
   }
@@ -34,8 +35,8 @@ class CatalogItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return VxBox(
-    child: Row(
-        children: [
+        child: Row(
+      children: [
         Hero(
           tag: Key(catalog.id.toString()),
           child: CatalogImage(
